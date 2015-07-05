@@ -6,6 +6,9 @@ import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
 import morgan from 'morgan'
 
+//App modules
+import Categories from './lib/categories'
+
 //Mongoose config
 const database = process.env.MONGO_URL || 'mongodb://localhost:27017/bloggy'
 
@@ -24,16 +27,9 @@ app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 
-//Create our express router
-const router = express.Router()
-
-//Testing
-router.get('/', (req, res) => {
-  res.json({ message: "hello world!! running"})
-})
 
 //Register all routes
-app.use(router)
+app.use(Categories)
 
 //Start the Server
 app.listen(port, () => { console.log(`Server listening at ${port}`) })
