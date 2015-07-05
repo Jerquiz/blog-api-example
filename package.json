@@ -4,6 +4,7 @@
   "description": "Example of a RESTful API built with io.js",
   "main": "index.js",
   "scripts": {
+    "start": "./node_modules/babel/bin/babel-node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
