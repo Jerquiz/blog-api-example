@@ -8,6 +8,7 @@ import morgan from 'morgan'
 
 //App modules
 import Categories from './lib/categories'
+import Posts from './lib/posts'
 
 //Mongoose config
 const database = process.env.MONGO_URL || 'mongodb://localhost:27017/bloggy'
@@ -29,6 +30,7 @@ app.use(bodyParser.json())
 
 
 //Register all routes
+app.use(Posts)
 app.use(Categories)
 
 //Start the Server
